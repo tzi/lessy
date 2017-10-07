@@ -84,6 +84,18 @@ RSpec.describe Api::TasksController, type: :request do
       end
     end
 
+    context 'with websocket support' do
+      it 'sends notification to user' do
+        expect { subject }.to have_broadcasted_to(user)
+          .from_channel(NotificationsChannel)
+          .with({
+            action: 'update#tasks',
+            id: task.id,
+            updatedAt: task.updated_at.to_i,
+          })
+      end
+    end
+
     context 'when authenticated with another user' do
       let(:other_user) { create(:user) }
       let(:token) { other_user.token }
@@ -309,6 +321,25 @@ RSpec.describe Api::TasksController, type: :request do
             source: { pointer: '/task/state' }
           }]
         }
+      end
+    end
+
+    context 'with websocket support' do
+      let(:task) { create :task, :started, user: user }
+      let(:payload) { {
+        task: {
+          state: 'planned',
+        },
+      } }
+
+      it 'sends notification to user' do
+        expect { subject }.to have_broadcasted_to(user)
+          .from_channel(NotificationsChannel)
+          .with({
+            action: 'update#tasks',
+            id: task.id,
+            updatedAt: task.updated_at.to_i,
+          })
       end
     end
 

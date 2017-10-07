@@ -7,11 +7,23 @@ class Api::TasksController < ApiController
   def update
     @task = current_task
     @task.update! update_task_params
+    NotificationsChannel.broadcast_to(
+      current_user,
+      action: 'update#tasks',
+      id: @task.id,
+      updatedAt: @task.updated_at.to_i,
+    )
   end
 
   def update_state
     @task = current_task
     @task.update_with_transition! update_task_state_params
+    NotificationsChannel.broadcast_to(
+      current_user,
+      action: 'update#tasks',
+      id: @task.id,
+      updatedAt: @task.updated_at.to_i,
+    )
   end
 
   def update_order
