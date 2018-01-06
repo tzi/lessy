@@ -5,6 +5,7 @@
 ### API changes
 
 - Remove project attributes on task relationships
+- Remove `project.isInProgress` (equivalent to `project.state === 'started'`)
 
 ## Aquarius 2017-12-29
 
