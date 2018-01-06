@@ -38,6 +38,8 @@ Result format:
 | data.attributes.plannedAt                       | number | Task's due date                          |          |
 | data.attributes.finishedAt                      | number | Date when task has been finished         |          |
 | data.attributes.abandonedAt                     | number | Date when task has been abandoned        |          |
+| data.attributes.createdAt                       | number | Date when task has been created          |          |
+| data.attributes.updatedAt                       | number | Date when task has been updated          |          |
 | data.relationships                              | object |                                          |          |
 | data.relationships.user                         | object | Related user reference                   |          |
 | data.relationships.user.data                    | object |                                          |          |
@@ -75,7 +77,9 @@ $ curl -H "Content-Type: application/json" \
       "startedAt": 1507454795,
       "plannedAt": 0,
       "finishedAt": 0,
-      "abandonedAt": 0
+      "abandonedAt": 0,
+      "createdAt": 1507454795,
+      "updatedAt": 1507454795
     },
     "relationships": {
       "user": {
@@ -119,6 +123,8 @@ Result format:
 | data[].attributes.plannedAt                       | number | Task's due date                          |          |
 | data[].attributes.finishedAt                      | number | Date when task has been finished         |          |
 | data[].attributes.abandonedAt                     | number | Date when task has been abandoned        |          |
+| data[].attributes.createdAt                       | number | Date when task has been created          |          |
+| data[].attributes.updatedAt                       | number | Date when task has been updated          |          |
 | data[].relationships                              | object |                                          |          |
 | data[].relationships.user                         | object | Related user reference                   |          |
 | data[].relationships.user.data                    | object |                                          |          |
@@ -158,7 +164,9 @@ $ curl -H "Authorization: <token>" https://lessy.io/api/users/me/tasks
         "startedAt": 1484870400,
         "plannedAt": 1507455286,
         "finishedAt": 0,
-        "abandonedAt": 0
+        "abandonedAt": 0,
+        "createdAt": 1484870400,
+        "updatedAt": 1507455286
       },
       "relationships": {
         "user": {
@@ -180,7 +188,9 @@ $ curl -H "Authorization: <token>" https://lessy.io/api/users/me/tasks
         "startedAt": 1507454795,
         "plannedAt": 0,
         "finishedAt": 0,
-        "abandonedAt": 0
+        "abandonedAt": 0,
+        "createdAt": 1507454795,
+        "updatedAt": 1507454795
       },
       "relationships": {
         "user": {
@@ -221,6 +231,8 @@ Result format:
 | data.attributes.plannedAt                       | number | Task's due date                          |          |
 | data.attributes.finishedAt                      | number | Date when task has been finished         |          |
 | data.attributes.abandonedAt                     | number | Date when task has been abandoned        |          |
+| data.attributes.createdAt                       | number | Date when task has been created          |          |
+| data.attributes.updatedAt                       | number | Date when task has been updated          |          |
 | data.relationships                              | object |                                          |          |
 | data.relationships.user                         | object | Related user reference                   |          |
 | data.relationships.user.data                    | object |                                          |          |
@@ -254,7 +266,9 @@ $ curl -H "Authorization: <token>" https://lessy.io/api/tasks/23
       "startedAt": 1507454795,
       "plannedAt": 0,
       "finishedAt": 0,
-      "abandonedAt": 0
+      "abandonedAt": 0,
+      "createdAt": 1507454795,
+      "updatedAt": 1507454795
     },
     "relationships": {
       "user": {
@@ -296,6 +310,8 @@ Result format:
 | data.attributes.plannedAt                       | number | Task's due date                          |          |
 | data.attributes.finishedAt                      | number | Date when task has been finished         |          |
 | data.attributes.abandonedAt                     | number | Date when task has been abandoned        |          |
+| data.attributes.createdAt                       | number | Date when task has been created          |          |
+| data.attributes.updatedAt                       | number | Date when task has been updated          |          |
 | data.relationships                              | object |                                          |          |
 | data.relationships.user                         | object | Related user reference                   |          |
 | data.relationships.user.data                    | object |                                          |          |
@@ -333,7 +349,9 @@ $ curl -H "Content-Type: application/json" \
       "startedAt": 1507454795,
       "plannedAt": 0,
       "finishedAt": 0,
-      "abandonedAt": 0
+      "abandonedAt": 0,
+      "createdAt": 1507454795,
+      "updatedAt": 1507456595
     },
     "relationships": {
       "user": {
@@ -409,6 +427,8 @@ Result format:
 | data.attributes.plannedAt                       | number | Task's due date                          |          |
 | data.attributes.finishedAt                      | number | Date when task has been finished         |          |
 | data.attributes.abandonedAt                     | number | Date when task has been abandoned        |          |
+| data.attributes.createdAt                       | number | Date when task has been created          |          |
+| data.attributes.updatedAt                       | number | Date when task has been updated          |          |
 | data.relationships                              | object |                                          |          |
 | data.relationships.user                         | object | Related user reference                   |          |
 | data.relationships.user.data                    | object |                                          |          |
@@ -452,7 +472,9 @@ $ curl -H "Content-Type: application/json" \
       "startedAt": 1507454795,
       "plannedAt": 1507457002,
       "finishedAt": 0,
-      "abandonedAt": 0
+      "abandonedAt": 0,
+      "createdAt": 1507454795,
+      "updatedAt": 1507458395
     },
     "relationships": {
       "user": {
