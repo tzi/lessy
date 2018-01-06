@@ -6,6 +6,8 @@
 
 - Remove project attributes on task relationships
 - Remove `project.isInProgress` (equivalent to `project.state === 'started'`)
+- Provide `GET /api/projects/:id` endpoint
+- Provide `GET /api/tasks/:id` endpoint
 
 ## Aquarius 2017-12-29
 

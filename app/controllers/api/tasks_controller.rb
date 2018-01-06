@@ -1,5 +1,9 @@
 class Api::TasksController < ApiController
 
+  def show
+    @task = current_task
+  end
+
   def update
     @task = current_task
     @task.update! update_task_params
