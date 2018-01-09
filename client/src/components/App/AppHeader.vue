@@ -6,10 +6,9 @@
         <slot></slot>
       </div>
     </nav>
-    <div v-else class="app-header-separator"></div>
     <div class="app-header-user">
+      <div class="app-header-user-name">{{ user.displayedName }}</div>
       <div>
-        {{ user.displayedName }}
         <ly-button type="ghost" @click="logout">{{ $t('app.appHeader.logout') }}</ly-button>
       </div>
     </div>
@@ -47,21 +46,29 @@
 
     color: $ly-color-white;
 
-    > .app-header-separator {
-      flex-grow: 1;
-    }
     > .app-header-nav {
       flex-shrink: 1;
       flex-grow: 1;
     }
     > .app-header-user {
-      flex-shrink: 0;
+      flex-basis: 0;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    > .app-header-user-name {
+      flex-basis: 0;
+      margin-right: 0.5rem;
+      color: $ly-color-grey-90;
+      
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .app-header-title,
-  .app-header-nav,
-  .app-header-user {
+  .app-header-nav {
     display: flex;
 
     flex-direction: column;
@@ -75,7 +82,6 @@
 
     font-size: 1.1rem;
     font-weight: normal;
-    line-height: 2.5rem;
     text-transform: uppercase;
   }
 
@@ -87,10 +93,6 @@
 
   .app-header-user {
     padding: 1rem 2rem 1rem 6rem;
-
-    color: $ly-color-grey-90;
-    line-height: 2.5rem;
-    white-space: nowrap;
 
     background: linear-gradient(45deg, $ly-color-pine-60 3.5rem,
                                        $ly-color-grey-20 3.5rem,
